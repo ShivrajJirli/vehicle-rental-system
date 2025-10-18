@@ -229,10 +229,7 @@ Update src/main/resources/application.properties for custom configuration:
  **Screenshots (if applicable)**
 
 
-# 📄 License
-**This project is licensed under the MIT License - see the LICENSE file for details.**
-
-# 👥 Authors
+# 👥 Author
 Shivraj Jirli - https://github.com/ShivrajJirli
     
 

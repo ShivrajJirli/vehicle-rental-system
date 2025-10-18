@@ -35,7 +35,7 @@ A robust backend system for vehicle rental management that supports adding, view
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/vehicle-rental-system.git
+   git clone  https://github.com/shivrajjirli/vehicle-rental-system.git
 
 2. **Navigate to project directory**
    ```bash

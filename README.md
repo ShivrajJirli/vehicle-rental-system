@@ -1,236 +1,246 @@
-# 🚗 Vehicle Rental System
+<div align="center">
+  <h1>🚗 Vehicle Rental System</h1>
+  <p><strong>A robust web-based Vehicle Rental System built with Spring Boot</strong></p>
+  
+  [![Java](https://img.shields.io/badge/Java-17-orange.svg)](https://java.com/)
+  [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-brightgreen.svg)](https://spring.io/projects/spring-boot)
+  [![Maven](https://img.shields.io/badge/Maven-3.6+-blue.svg)](https://maven.apache.org/)
+  [![H2 Database](https://img.shields.io/badge/Database-H2-blueviolet.svg)](https://h2database.com/)
+</div>
 
-A complete web-based Vehicle Rental System built using Spring Boot that allows users to manage vehicle details through RESTful APIs. This system provides full CRUD operations for vehicle management with an in-memory H2 database.
+<hr/>
 
 ## 📋 About
-A robust backend system for vehicle rental management that supports adding, viewing, updating, and deleting vehicles through clean REST APIs. Perfect for learning Spring Boot or as a foundation for rental management applications.
 
-## 🛠️ Tech Stack
-
-- **Java 17**
-- **Spring Boot 3.x**
-- **Spring Data JPA**
-- **H2 Database** (In-memory)
-- **Maven**
-- **Postman** (for API testing)
+A complete backend system for vehicle rental management that provides RESTful APIs for handling vehicle details. It features full CRUD operations utilizing an in-memory H2 database, making it perfect for learning Spring Boot or serving as a solid foundation for your rental management applications.
 
 ## ✨ Features
 
-- ➕ Add new vehicles with complete details
-- 📋 View all available vehicles
-- 🔍 Get specific vehicle by ID
-- ✏️ Update existing vehicle information
-- ❌ Delete vehicles from the system
-- 🗄️ In-memory H2 database with web console
-- 🔒 RESTful API architecture
+- ➕ **Comprehensive Management:** Add, view, update, and delete vehicle records with complete details.
+- 🔍 **Targeted Retrieval:** Fetch specific vehicles effortlessly using their unique IDs.
+- 🗄️ **Zero-Config Database:** In-memory H2 database included with a web console for quick development and testing.
+- 🔒 **Modern Architecture:** Clean and scalable RESTful API design.
+
+## 🛠️ Tech Stack
+
+| Technology | Description |
+| :--- | :--- |
+| **Java 17** | Core programming language |
+| **Spring Boot 3.x** | Application framework |
+| **Spring Data JPA** | Database interaction layer |
+| **H2 Database** | In-memory relational database |
+| **Maven** | Dependency management and build tool |
+| **Postman** | API testing environment |
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Java 17 or higher
-- Maven 3.6+
-- Postman (for API testing)
+Make sure you have the following installed on your machine:
+- **Java 17** or higher
+- **Maven 3.6+**
+- **Postman** (Optional, for API testing)
 
 ### Installation & Run
 
 1. **Clone the repository**
    ```bash
-   git clone  https://github.com/shivrajjirli/vehicle-rental-system.git
+   git clone https://github.com/shivrajjirli/vehicle-rental-system.git
+   ```
 
 2. **Navigate to project directory**
    ```bash
    cd vehicle-rental-system
+   ```
 
 3. **Run the application**
    ```bash
    mvn spring-boot:run
+   ```
 
 4. **Access the application**
-   ```bash
-   Server starts at: http://localhost:8081
+   > Server will start running at: `http://localhost:8081`
 
+---
 
 ## 📡 API Endpoints
 
+| Method | Endpoint | Description |
+| :---: | :--- | :--- |
+| <kbd>POST</kbd> | `/api/vehicles` | Add a new vehicle |
+| <kbd>GET</kbd> | `/api/vehicles` | View all vehicles |
+| <kbd>GET</kbd> | `/api/vehicles/{id}` | Get vehicle by ID |
+| <kbd>PUT</kbd> | `/api/vehicles/{id}` | Update vehicle details |
+| <kbd>DELETE</kbd>| `/api/vehicles/{id}` | Delete a vehicle |
 
-| Method   | Endpoint             | Description            |
-| -------- | -------------------- | ---------------------- |
-| `POST`   | `/api/vehicles`      | Add a new vehicle      |
-| `GET`    | `/api/vehicles`      | View all vehicles      |
-| `GET`    | `/api/vehicles/{id}` | Get vehicle by ID      |
-| `PUT`    | `/api/vehicles/{id}` | Update vehicle details |
-| `DELETE` | `/api/vehicles/{id}` | Delete a vehicle       |
-
+---
 
 ## 🧪 API Usage Examples
 
+<details>
+<summary><b>1. Add a New Vehicle</b></summary>
+
+**Request:**
+```http
 POST http://localhost:8081/api/vehicles
+Content-Type: application/json
+```
 
-**Content-Type: application/json**
+**Body:**
+```json
+{
+  "brand": "Toyota",
+  "model": "Camry",
+  "year": 2022,
+  "color": "White",
+  "rentalPrice": 45.50,
+  "available": true
+}
+```
+</details>
 
-**{**
+<details>
+<summary><b>2. Get All Vehicles</b></summary>
 
-  **"brand": "Toyota",**
-  
-  **"model": "Camry",**
-  
-  **"year": 2022,**
-  
-  **"color": "White",**
-  
-  **"rentalPrice": 45.50,**
-  
-  **"available": true**
-  
-**}**
+**Request:**
+```http
+GET http://localhost:8081/api/vehicles
+```
+</details>
 
-**Get All Vehicles**
+<details>
+<summary><b>3. Get Vehicle by ID</b></summary>
 
-      GET http://localhost:8081/api/vehicles
+**Request:**
+```http
+GET http://localhost:8081/api/vehicles/1
+```
+</details>
 
-**Get Vehicle by ID**
+<details>
+<summary><b>4. Delete a Vehicle</b></summary>
 
-      GET http://localhost:8081/api/vehicles/1
+**Request:**
+```http
+DELETE http://localhost:8081/api/vehicles/1
+```
+</details>
 
-**Delete Vehicle**
-
-      DELETE http://localhost:8081/api/vehicles/1
+---
 
 ## 🗃️ H2 Database Console
 
-**Access the in-memory database console for direct data management:**
+Access the built-in database console to view and manage your data directly:
 
-**URL: http://localhost:8081/h2-console**
+- **URL:** [`http://localhost:8081/h2-console`](http://localhost:8081/h2-console)
+- **JDBC URL:** `jdbc:h2:mem:testdb`
+- **Username:** `sa`
+- **Password:** *(leave empty)*
 
-**JDBC URL: jdbc:h2:mem:testdb**
+> ⚠️ **Note:** The H2 console is only available during development. Since it's an in-memory database, all data will be lost when the application stops.
 
-**Username: sa**
+---
 
-**Password: (leave empty)**
+## ⚙️ Configuration
 
-**Note: The H2 console is available only during development. Data will be lost when the application stops.**
+You can customize the application by updating the `src/main/resources/application.properties` file. Here are the default settings:
 
+```properties
+# --- Server Configuration ---
+server.port=8081
 
-## 🔧 Project Structure
+# --- H2 Database Settings ---
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=
 
-```
-vehicle-rental-system/
-├── .mvn/
-│ └── wrapper/
-│ └── maven-wrapper.properties
-├── src/
-│ ├── main/
-│ │ ├── java/
-│ │ │ └── com/rental/rentalservice/
-│ │ │ ├── controller/
-│ │ │ ├── exception/
-│ │ │ ├── model/
-│ │ │ ├── repository/
-│ │ │ ├── service/
-│ │ │ └── RentalServiceApplication.java
-│ │ └── resources/
-│ │ ├── static/
-│ │ ├── templates/
-│ │ └── application.properties
-│ └── test/
-│ └── java/
-│ └── com/rental/rentalservice/
-│ └── RentalServiceApplicationTests.java
-├── target/
-├── .gitattributes
-├── .gitignore
-├── HELP.md
-├── mvnw
-├── mvnw.cmd
-└── pom.xml
+# --- H2 Console ---
+spring.h2.console.enabled=true
+spring.h2.console.path=/h2-console
+
+# --- JPA Settings ---
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+spring.jpa.hibernate.ddl-auto=create-drop
+spring.jpa.show-sql=true
 ```
 
+---
 
 ## 🏗️ Build Commands
 
-**Clean and build project**
-         
-    mvn clean install
+| Action | Command |
+| :--- | :--- |
+| **Clean and build project** | `mvn clean install` |
+| **Run tests** | `mvn test` |
+| **Create executable JAR** | `mvn clean package` |
+| **Run with specific profile**| `mvn spring-boot:run -Dspring-boot.run.profiles=dev` |
 
-**Run tests**
-         
-    mvn test
+---
 
-**Create executable JAR**
-         
-    mvn clean package
+## 🔧 Project Structure
 
-**Run with specific profile**
-            
-    mvn spring-boot:run -Dspring-boot.run.profiles=dev
+```text
+vehicle-rental-system/
+├── src/
+│   ├── main/
+│   │   ├── java/com/rental/rentalservice/
+│   │   │   ├── controller/
+│   │   │   ├── exception/
+│   │   │   ├── model/
+│   │   │   ├── repository/
+│   │   │   ├── service/
+│   │   │   └── RentalServiceApplication.java
+│   │   └── resources/
+│   │       ├── static/
+│   │       ├── templates/
+│   │       └── application.properties
+│   └── test/java/com/rental/rentalservice/
+│       └── RentalServiceApplicationTests.java
+├── pom.xml
+└── README.md
+```
 
+---
 
-# ⚙️ Configuration
-Update src/main/resources/application.properties for custom configuration:
+## 🐛 Troubleshooting
 
-## Server Configuration
-**server.port=8081**
+### Common Issues:
 
-## H2 Database
+* **Port already in use:** Change `server.port` in `application.properties`.
+* **H2 console not accessible:** Ensure `spring.h2.console.enabled=true` in your configuration.
+* **Database connection error:** Verify that the JDBC URL in the H2 console matches the application properties.
 
-**spring.datasource.url=jdbc:h2:mem:testdb**
+### Quick Fixes (Port Issues):
 
-**spring.datasource.driverClassName=org.h2.Driver**
+**Windows:**
+```bash
+netstat -ano | findstr :8081
+taskkill /PID <PID> /F
+```
 
-**spring.datasource.username=sa**
+**Linux/Mac:**
+```bash
+lsof -ti:8081 | xargs kill -9
+```
 
-**spring.datasource.password=do not add anything**
+---
 
+## 🤝 Bug Reports & Contributing
 
-## H2 Console (Enable in development)
+If you encounter any bugs or have feature requests, please open an issue with:
+* Detailed description of the bug
+* Steps to reproduce
+* Expected vs actual behavior
+* Screenshots (if applicable)
 
-**spring.h2.console.enabled=true**
+---
 
-**spring.h2.console.path=/h2-console**
+## 👤 Author
 
-## JPA Settings
+**Shivraj Jirli** 
+* GitHub: [@ShivrajJirli](https://github.com/ShivrajJirli)
 
-**spring.jpa.database-platform=org.hibernate.dialect.H2Dialect**
-
-**spring.jpa.hibernate.ddl-auto=create-drop**
-
-**spring.jpa.show-sql=true**
-
-
-
-# 🐛 Troubleshooting
-
-## Common Issues:
-
-**Port already in use: Change server.port in application.properties**
-
-**H2 console not accessible: Ensure spring.h2.console.enabled=true**
-
-**Database connection error: Verify JDBC URL in H2 console matches application properties**
-
-## Solutions:
-      # Kill process using port 8081 (Windows)
-      netstat -ano | findstr :8081
-      taskkill /PID <PID> /F
-
-      # Kill process using port 8081 (Linux/Mac)
-      lsof -ti:8081 | xargs kill -9
-
-
-# 🐛 Bug Reports
- **If you encounter any bugs, please open an issue with:**
-
- **Detailed description of the bug**
-
- **Steps to reproduce**
-
- **Expected vs actual behavior**
-
- **Screenshots (if applicable)**
-
-
-# 👥 Author
-Shivraj Jirli - https://github.com/ShivrajJirli
-    
-
-
+<br/>
+<div align="center">
+  <sub>Built with ❤️ by Shivraj Jirli</sub>
+</div>
